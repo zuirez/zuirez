@@ -1,5 +1,5 @@
 # 💫 About Me:
-🌱 I’m currently learning Web Development and Data Structure & Algorithm <br>-Studying CSE at AIUB (American International University - Bangladesh) <br> 
+🌱 I’m currently learning Web Development and Data Structure & Algorithm <br> - Studying CSE at AIUB (American International University - Bangladesh) <br> 
 
 
 ## 🌐 Socials:

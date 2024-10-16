@@ -1,33 +1,30 @@
-name: Update Lines of Code
+name: Update README with LOC
 
 on:
-  schedule:
-    - cron: "0 0 * * 1"  # Runs every Monday at midnight
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Count Lines of Code
-      run: |
-        echo "Calculating total lines of code..."
-        LOC=$(find . -type f -name "*.py" -o -name "*.js" -o -name "*.cpp" -o -name "*.java" | xargs wc -l | tail -n 1 | awk '{print $1}')
-        echo "Total Lines of Code: $LOC"
-        echo "LOC=$LOC" >> $GITHUB_ENV
+      - name: Count Lines of Code
+        run: |
+          LOC=$(find . -type f \( -name "*.py" -o -name "*.js" -o -name "*.cpp" -o -name "*.java" \) | xargs wc -l | tail -n 1 | awk '{print $1}')
+          echo "LOC=$LOC" >> $GITHUB_ENV
 
-    - name: Update README.md
-      run: |
-        sed -i "s/<!-- LOC -->/$LOC/g" README.md
+      - name: Update README.md
+        run: |
+          sed -i "s/<!-- LOC -->/${LOC}/g" README.md
 
-    - name: Commit and Push Changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add README.md
-        git commit -m "Update lines of code count"
-        git push
+      - name: Commit and Push Changes
+        env:
+          TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update lines of code count"
+          git push https://$TOKEN@github.com/zuirez/zuirez.git HEAD:main

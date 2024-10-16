@@ -1,8 +1,6 @@
 # 💫 About Me:
 🔭 I’m currently studying in American International University Bangladesh  <br><br>🌱 I’m currently learning <br><br>      - Web Development <br>      - Data Structure and Algorithm<br>      - Solving problems at CodeForces <br><br>⚡ I'm interested in contributing to open source
 
-🚀 **Total Lines of Code I Have Written:** <!-- LOC --> lines
-
 ## 🌐 Socials:
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/zuirez/) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/zuirez/) [![X](https://img.shields.io/badge/X-black.svg?logo=X&logoColor=white)](https://x.com/zuirez) 
 
